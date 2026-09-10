@@ -91,29 +91,29 @@
     </header>
 
     <div class="svc">
-      <div class="svc__stage">
-        <img class="svc__img is-on" data-i="0" src="assets/strassenbau.webp" alt="Team der Faust GmbH beim Einbau einer Asphaltfläche in einer Ortsstraße" width="1600" height="900">
-        <img class="svc__img" data-i="1" src="assets/pflasterbau.webp" alt="Fertig gepflasterte Bushaltestelle mit Bordsteinanlage und taktilem Leitsystem" loading="lazy" width="1400" height="1867">
-        <img class="svc__img" data-i="2" src="assets/tiefbau.webp" alt="Offener Rohrgraben mit Verbau und blauen Trinkwasserleitungen" loading="lazy" width="1400" height="1867">
-        <img class="svc__img" data-i="3" src="assets/aussenanlagen.webp" alt="Fertige Terrasse mit Großformatplatten unter einer Überdachung" loading="lazy" width="1600" height="1200">
+      <div class="svc__stage" aria-hidden="true">
+        <img class="svc__img is-on" data-i="0" src="assets/strassenbau.webp" alt="" width="1600" height="900">
+        <img class="svc__img" data-i="1" src="assets/pflasterbau.webp" alt="" loading="lazy" width="1400" height="1867">
+        <img class="svc__img" data-i="2" src="assets/tiefbau.webp" alt="" loading="lazy" width="1400" height="1867">
+        <img class="svc__img" data-i="3" src="assets/aussenanlagen.webp" alt="" loading="lazy" width="1600" height="1200">
         <span class="svc__tag" id="svcTag">Öffentlich und gewerblich</span>
       </div>
 
       <ul class="svc__list">
         <li class="svc__item is-on">
-          <button type="button" class="svc__btn" data-i="0" data-tag="Öffentlich und gewerblich" aria-expanded="true" aria-controls="svc0">Straßen- und Asphaltbau</button>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="0" data-tag="Öffentlich und gewerblich" aria-expanded="true" aria-controls="svc0">Straßen- und Asphaltbau<span class="sr">, Bereich: Öffentlich und gewerblich</span></button></h3>
           <div class="svc__body" id="svc0"><p>Ortsdurchfahrten, Wirtschaftswege, Hof- und Betriebsflächen. Wir fräsen die alte Decke ab und bauen die neue mit unserem Vögele-Fertiger ein, auf Wunsch abschnittsweise im laufenden Verkehr.</p></div>
         </li>
         <li class="svc__item">
-          <button type="button" class="svc__btn" data-i="1" data-tag="Das Handwerk seit 1948" aria-expanded="false" aria-controls="svc1">Pflasterbau</button>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="1" data-tag="Das Handwerk seit 1948" aria-expanded="false" aria-controls="svc1">Pflasterbau<span class="sr">, Bereich: Das Handwerk seit 1948</span></button></h3>
           <div class="svc__body" id="svc1"><p>Beton- und Natursteinpflaster, Großformate, Bordsteine, taktile Leitsysteme. Ab etwa 400 Quadratmetern verlegt unsere Pflastermaschine die Reihen. Das verkürzt die Bauzeit und hält das Fugenbild gleichmäßig.</p></div>
         </li>
         <li class="svc__item">
-          <button type="button" class="svc__btn" data-i="2" data-tag="Unter der Straße" aria-expanded="false" aria-controls="svc2">Kanal- und Wasserleitungsbau</button>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="2" data-tag="Unter der Straße" aria-expanded="false" aria-controls="svc2">Kanal- und Wasserleitungsbau<span class="sr">, Bereich: Unter der Straße</span></button></h3>
           <div class="svc__body" id="svc2"><p>Schmutz- und Regenwasserkanäle, Trinkwasserleitungen, Hausanschlüsse, Schächte bis DN 2000, mit Verbau und Wasserhaltung. Die Unterlagen für den Auftraggeber gehören dazu.</p></div>
         </li>
         <li class="svc__item">
-          <button type="button" class="svc__btn" data-i="3" data-tag="Für Privatkunden" aria-expanded="false" aria-controls="svc3">Außenanlagen</button>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="3" data-tag="Für Privatkunden" aria-expanded="false" aria-controls="svc3">Außenanlagen<span class="sr">, Bereich: Für Privatkunden</span></button></h3>
           <div class="svc__body" id="svc3"><p>Terrassen, Einfahrten, Hofbefestigungen, Treppen, Natursteinmauern, Zisternen. Wir sehen uns die Situation bei Ihnen an und bringen Muster mit, bevor irgendetwas bestellt wird.</p></div>
         </li>
       </ul>
@@ -364,17 +364,16 @@
     </nav>
     <p class="foot__c">© <span id="yr">2026</span> Faust GmbH, Poststraße 1, 65510 Hünstetten-Görsroth</p>
   </div>
+  <div class="callbar">
+    <a href="tel:+4961264898">Anrufen</a>
+    <a href="#kontakt" class="callbar__alt">Anfrage stellen</a>
+  </div>
+
+  <a class="demo" href="https://nexas-media.de" target="_blank" rel="noopener">
+    <span>Demo by</span>
+    <img src="assets/nexas-logo.svg" alt="NEXAS Media" width="1596" height="509">
+  </a>
 </footer>
-
-<div class="callbar">
-  <a href="tel:+4961264898">Anrufen</a>
-  <a href="#kontakt" class="callbar__alt">Anfrage stellen</a>
-</div>
-
-<a class="demo" href="https://nexas-media.de" target="_blank" rel="noopener">
-  <span>Demo by</span>
-  <img src="assets/nexas-logo.svg" alt="NEXAS Media" width="1596" height="509">
-</a>
 
 <script src="app.js"></script>
 </body>
