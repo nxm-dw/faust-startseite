@@ -56,6 +56,7 @@
   <div class="hero__media">
     <img src="assets/hero.webp" alt="Baustelle der Faust GmbH aus der Luft, Fertiger, Radlader und Kipper beim Einbau einer Asphaltdecke" width="2400" height="1350" fetchpriority="high">
   </div>
+  <div class="hero__veil" aria-hidden="true"></div>
   <div class="hero__in">
     <p class="eyebrow eyebrow--light">Faust GmbH · Hünstetten-Görsroth</p>
     <h1 class="hero__h1">
@@ -66,7 +67,7 @@
     <p class="hero__sub">Pflaster-, Straßen- und Tiefbau in vierter Generation. 15 Mitarbeiter, 42 eigene Maschinen. Wir arbeiten im Umkreis von rund 40 Kilometern um Görsroth, für Gemeinden, Betriebe und Privatleute.</p>
     <div class="hero__acts">
       <a class="btn" href="#kontakt">Anfrage stellen</a>
-      <a class="btn btn--ghost" href="tel:+4961264898">06126 4898</a>
+      <a class="btn btn--light" href="tel:+4961264898">06126 4898</a>
     </div>
   </div>
 </section>
@@ -89,42 +90,33 @@
       <p class="lede">Erdarbeiten, Leitungen, Tragschichten und Belag machen wir mit eigenen Leuten und eigenem Gerät.</p>
     </header>
 
-    <div class="leist">
-      <article class="lrow">
-        <div class="lrow__img"><img src="assets/strassenbau.webp" alt="Team der Faust GmbH beim Einbau einer Asphaltfläche in einer Ortsstraße" loading="lazy" width="1600" height="900"></div>
-        <div class="lrow__txt">
-          <p class="mono">Öffentlich und gewerblich</p>
-          <h3>Straßen- und Asphaltbau</h3>
-          <p>Ortsdurchfahrten, Wirtschaftswege, Hof- und Betriebsflächen. Wir fräsen die alte Decke ab und bauen die neue mit unserem Vögele-Fertiger ein, auf Wunsch abschnittsweise im laufenden Verkehr.</p>
-        </div>
-      </article>
+    <div class="svc">
+      <div class="svc__stage">
+        <img class="svc__img is-on" data-i="0" src="assets/strassenbau.webp" alt="Team der Faust GmbH beim Einbau einer Asphaltfläche in einer Ortsstraße" width="1600" height="900">
+        <img class="svc__img" data-i="1" src="assets/pflasterbau.webp" alt="Fertig gepflasterte Bushaltestelle mit Bordsteinanlage und taktilem Leitsystem" loading="lazy" width="1400" height="1867">
+        <img class="svc__img" data-i="2" src="assets/tiefbau.webp" alt="Offener Rohrgraben mit Verbau und blauen Trinkwasserleitungen" loading="lazy" width="1400" height="1867">
+        <img class="svc__img" data-i="3" src="assets/aussenanlagen.webp" alt="Fertige Terrasse mit Großformatplatten unter einer Überdachung" loading="lazy" width="1600" height="1200">
+        <span class="svc__tag" id="svcTag">Öffentlich und gewerblich</span>
+      </div>
 
-      <article class="lrow">
-        <div class="lrow__img"><img src="assets/pflasterbau.webp" alt="Fertig gepflasterte Bushaltestelle mit Bordsteinanlage und taktilem Leitsystem" loading="lazy" width="1400" height="1867"></div>
-        <div class="lrow__txt">
-          <p class="mono">Das Handwerk seit 1948</p>
-          <h3>Pflasterbau</h3>
-          <p>Beton- und Natursteinpflaster, Großformate, Bordsteine, taktile Leitsysteme. Ab etwa 400 Quadratmetern verlegt unsere Pflastermaschine die Reihen. Das verkürzt die Bauzeit und hält das Fugenbild gleichmäßig.</p>
-        </div>
-      </article>
-
-      <article class="lrow">
-        <div class="lrow__img"><img src="assets/tiefbau.webp" alt="Offener Rohrgraben mit Verbau und blauen Trinkwasserleitungen" loading="lazy" width="1400" height="1867"></div>
-        <div class="lrow__txt">
-          <p class="mono">Unter der Straße</p>
-          <h3>Kanal- und Wasserleitungsbau</h3>
-          <p>Schmutz- und Regenwasserkanäle, Trinkwasserleitungen, Hausanschlüsse, Schächte bis DN 2000, mit Verbau und Wasserhaltung. Die Unterlagen für den Auftraggeber gehören dazu.</p>
-        </div>
-      </article>
-
-      <article class="lrow">
-        <div class="lrow__img"><img src="assets/aussenanlagen.webp" alt="Fertige Terrasse mit Großformatplatten unter einer Überdachung" loading="lazy" width="1600" height="1200"></div>
-        <div class="lrow__txt">
-          <p class="mono">Für Privatkunden</p>
-          <h3>Außenanlagen</h3>
-          <p>Terrassen, Einfahrten, Hofbefestigungen, Treppen, Natursteinmauern, Zisternen. Wir sehen uns die Situation bei Ihnen an und bringen Muster mit, bevor irgendetwas bestellt wird.</p>
-        </div>
-      </article>
+      <ul class="svc__list">
+        <li class="svc__item is-on">
+          <button type="button" class="svc__btn" data-i="0" data-tag="Öffentlich und gewerblich" aria-expanded="true" aria-controls="svc0">Straßen- und Asphaltbau</button>
+          <div class="svc__body" id="svc0"><p>Ortsdurchfahrten, Wirtschaftswege, Hof- und Betriebsflächen. Wir fräsen die alte Decke ab und bauen die neue mit unserem Vögele-Fertiger ein, auf Wunsch abschnittsweise im laufenden Verkehr.</p></div>
+        </li>
+        <li class="svc__item">
+          <button type="button" class="svc__btn" data-i="1" data-tag="Das Handwerk seit 1948" aria-expanded="false" aria-controls="svc1">Pflasterbau</button>
+          <div class="svc__body" id="svc1"><p>Beton- und Natursteinpflaster, Großformate, Bordsteine, taktile Leitsysteme. Ab etwa 400 Quadratmetern verlegt unsere Pflastermaschine die Reihen. Das verkürzt die Bauzeit und hält das Fugenbild gleichmäßig.</p></div>
+        </li>
+        <li class="svc__item">
+          <button type="button" class="svc__btn" data-i="2" data-tag="Unter der Straße" aria-expanded="false" aria-controls="svc2">Kanal- und Wasserleitungsbau</button>
+          <div class="svc__body" id="svc2"><p>Schmutz- und Regenwasserkanäle, Trinkwasserleitungen, Hausanschlüsse, Schächte bis DN 2000, mit Verbau und Wasserhaltung. Die Unterlagen für den Auftraggeber gehören dazu.</p></div>
+        </li>
+        <li class="svc__item">
+          <button type="button" class="svc__btn" data-i="3" data-tag="Für Privatkunden" aria-expanded="false" aria-controls="svc3">Außenanlagen</button>
+          <div class="svc__body" id="svc3"><p>Terrassen, Einfahrten, Hofbefestigungen, Treppen, Natursteinmauern, Zisternen. Wir sehen uns die Situation bei Ihnen an und bringen Muster mit, bevor irgendetwas bestellt wird.</p></div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -158,11 +150,11 @@
           <rect class="lyr" data-lyr="4" x="210" y="40" width="480" height="50" fill="url(#pDeck)"/>
           <rect class="lyr" data-lyr="4" x="210" y="40" width="480" height="3" fill="#9aa0ac"/>
 
-          <g class="lbl lyr" data-lyr="4"><text class="lb" x="172" y="70"  text-anchor="end">Pflasterdecke <tspan class="lb--v">8 cm</tspan></text><line x1="180" y1="65"  x2="206" y2="65"  stroke="#585d66"/></g>
-          <g class="lbl lyr" data-lyr="3"><text class="lb" x="172" y="107" text-anchor="end">Bettung <tspan class="lb--v">4 cm</tspan></text><line x1="180" y1="102" x2="206" y2="102" stroke="#585d66"/></g>
-          <g class="lbl lyr" data-lyr="2"><text class="lb" x="172" y="158" text-anchor="end">Tragschicht <tspan class="lb--v">12 cm</tspan></text><line x1="180" y1="153" x2="206" y2="153" stroke="#585d66"/></g>
-          <g class="lbl lyr" data-lyr="1"><text class="lb" x="172" y="320" text-anchor="end">Frostschutz <tspan class="lb--v">40 cm</tspan></text><line x1="180" y1="315" x2="206" y2="315" stroke="#585d66"/></g>
-          <g class="lbl lyr lbl--m" data-lyr="0"><text class="lb" x="172" y="445" text-anchor="end">Planum <tspan class="lb--v">Ev2 &#8805; 45</tspan></text><line x1="180" y1="440" x2="206" y2="440" stroke="#e8467c"/></g>
+          <g class="lbl" data-lyr="4"><text class="lb" x="172" y="70"  text-anchor="end">Pflasterdecke <tspan class="lb--v">8 cm</tspan></text><line x1="180" y1="65"  x2="206" y2="65"  stroke="#585d66"/></g>
+          <g class="lbl" data-lyr="3"><text class="lb" x="172" y="107" text-anchor="end">Bettung <tspan class="lb--v">4 cm</tspan></text><line x1="180" y1="102" x2="206" y2="102" stroke="#585d66"/></g>
+          <g class="lbl" data-lyr="2"><text class="lb" x="172" y="158" text-anchor="end">Tragschicht <tspan class="lb--v">12 cm</tspan></text><line x1="180" y1="153" x2="206" y2="153" stroke="#585d66"/></g>
+          <g class="lbl" data-lyr="1"><text class="lb" x="172" y="320" text-anchor="end">Frostschutz <tspan class="lb--v">40 cm</tspan></text><line x1="180" y1="315" x2="206" y2="315" stroke="#585d66"/></g>
+          <g class="lbl lbl--m" data-lyr="0"><text class="lb" x="172" y="445" text-anchor="end">Planum <tspan class="lb--v">Ev2 &#8805; 45</tspan></text><line x1="180" y1="440" x2="206" y2="440" stroke="#e8467c"/></g>
 
           <g class="dim" stroke="#e8467c" stroke-width="1.6" fill="none">
             <line x1="712" y1="40" x2="712" y2="440"/>
@@ -310,7 +302,7 @@
       </ul>
       <div class="azubi__acts">
         <a class="btn btn--dark" href="https://wa.me/4961264898?text=Hallo%20Faust%20GmbH%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Ausbildung%20zum%20Stra%C3%9Fenbauer." target="_blank" rel="noopener">Kurzbewerbung per WhatsApp</a>
-        <a class="btn btn--line" href="mailto:info@faustgmbh.de?subject=Ausbildung%20Stra%C3%9Fenbauer">Bewerbung per E-Mail</a>
+        <a class="btn btn--light" href="mailto:info@faustgmbh.de?subject=Ausbildung%20Stra%C3%9Fenbauer">Bewerbung per E-Mail</a>
       </div>
       <p class="azubi__note">Ein Anschreiben brauchen wir nicht. Name, Alter und Wohnort reichen, alles Weitere klären wir am Telefon.</p>
     </div>
@@ -378,6 +370,11 @@
   <a href="tel:+4961264898">Anrufen</a>
   <a href="#kontakt" class="callbar__alt">Anfrage stellen</a>
 </div>
+
+<a class="demo" href="https://nexas-media.de" target="_blank" rel="noopener">
+  <span>Demo by</span>
+  <img src="assets/nexas-logo.svg" alt="NEXAS Media" width="1596" height="509">
+</a>
 
 <script src="app.js"></script>
 </body>

@@ -8,6 +8,19 @@
   requestAnimationFrame(function () { document.body.classList.add('ready'); });
   var yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
 
+  /* Hero: leichte Tiefenwirkung */
+  var heroMedia = $('.hero__media'), hero = $('.hero'), ticking = false;
+  if (heroMedia && !reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var parallax = function () {
+      var y = window.scrollY;
+      if (y < hero.offsetHeight) heroMedia.style.transform = 'translate3d(0,' + (y * 0.16) + 'px,0)';
+      ticking = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(parallax); }
+    }, { passive: true });
+  }
+
   /* Header */
   var head = $('#head');
   var onScroll = function () { head.classList.toggle('is-stuck', window.scrollY > 40); };
@@ -29,7 +42,7 @@
   });
 
   /* Sanfte Einblendung */
-  $$('.shead, .lrow, .proj, .fleet__intro, .fleet__list, .rail, .azubi__list, .azubi__img, .kform, .kdl, .note')
+  $$('.shead, .svc, .proj, .fleet__intro, .fleet__list, .rail, .azubi__list, .azubi__img, .kform, .kdl, .note')
     .forEach(function (el) { el.setAttribute('data-reveal', ''); });
 
   if ('IntersectionObserver' in window && !reduce) {
@@ -43,11 +56,29 @@
     $$('[data-reveal]').forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* Leistungen: Bild folgt der Auswahl */
+  var svcBtns = $$('.svc__btn'), svcTag = $('#svcTag');
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function setSvc(i) {
+    $$('.svc__item').forEach(function (li, n) { li.classList.toggle('is-on', n === i); });
+    svcBtns.forEach(function (b, n) { b.setAttribute('aria-expanded', String(n === i)); });
+    $$('.svc__img').forEach(function (img) {
+      img.classList.toggle('is-on', parseInt(img.getAttribute('data-i'), 10) === i);
+    });
+    if (svcTag) svcTag.textContent = svcBtns[i].getAttribute('data-tag');
+  }
+  svcBtns.forEach(function (btn) {
+    var i = parseInt(btn.getAttribute('data-i'), 10);
+    btn.addEventListener('click', function () { setSvc(i); });
+    btn.addEventListener('focus', function () { setSvc(i); });
+    if (canHover) btn.addEventListener('mouseenter', function () { setSvc(i); });
+  });
+
   /* Schichtaufbau */
   var steps = $$('.step'), viz = $('.viz');
   function setLayer(active) {
     steps.forEach(function (s, i) { s.classList.toggle('on', i <= active); });
-    $$('.lyr').forEach(function (l) {
+    $$('[data-lyr]').forEach(function (l) {
       l.classList.toggle('on', parseInt(l.getAttribute('data-lyr'), 10) <= active);
     });
     viz.classList.toggle('done', active >= 4);
