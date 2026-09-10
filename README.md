@@ -12,9 +12,6 @@ Bildergalerie.
 ## Bewusst gesetzte Platzhalter
 - Projekt-Bildunterschriften beschreiben nur, was auf dem Foto zu sehen ist. Echte Projektnamen,
   Orte, Bauzeiten und Auftraggeber fehlen und müssen vom Kunden kommen.
-- Der Flächen-Rechner arbeitet mit marktüblichen Richtwerten, nicht mit Faust-Kalkulationssätzen.
-  Vor einem Livegang müssen die Spannen vom Kunden bestätigt werden (`app.js`, Objekte `AUFBAU`
-  und `BELAG`).
 - Impressum und Datenschutz sind nicht hinterlegt.
 - Das Kontaktformular öffnet das E-Mail-Programm (`mailto:`). Für den Livegang braucht es einen
   serverseitigen Versand.
@@ -26,7 +23,7 @@ Reines HTML, CSS und JavaScript ohne Framework und ohne Build. Schriften über G
 
 - `index.html` — gesamte Seite
 - `styles.css` — Gestaltung
-- `app.js` — Flächen-Rechner, Schichtaufbau, Filter, Zähler
+- `app.js` — Schichtaufbau, Projektfilter, Navigation, Zeitstrahl
 - `assets/` — Bilder aus dem Bestand des Kunden
 
 Lokal ansehen: `python3 -m http.server 8000` im Projektordner, dann http://localhost:8000
