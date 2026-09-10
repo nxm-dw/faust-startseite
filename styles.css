@@ -11,7 +11,7 @@
   --kalk:#f5f4f1;
   --spray:#e8467c;
   --muted:#6f6c66;
-  --muted-l:rgba(255,255,255,.62);
+  --muted-l:rgba(255,255,255,.74);
   --hair:rgba(29,29,27,.18);
   --hair-l:rgba(255,255,255,.2);
 
@@ -153,41 +153,61 @@ a,button,input,textarea,select,summary,[tabindex]{scroll-margin-top:96px;scroll-
 
 /* Leistungen */
 .svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,3.4vw,56px);align-items:stretch}
-.svc__stage{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--splitt);clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),calc(100% - 30px) 100%,0 100%)}
-.svc__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity .5s ease,transform 1.1s cubic-bezier(.2,.7,.3,1)}
-.svc__img.is-on{opacity:1;transform:none}
-.svc__tag{
-  position:absolute;left:0;bottom:0;z-index:2;
-  background:var(--asphalt);color:#fff;padding:9px 15px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+
+/* Bühne: feste Höhe, das Bild wischt beim Wechsel herein */
+.svc__stage{
+  position:relative;overflow:hidden;background:var(--asphalt);
+  min-height:clamp(320px,31vw,460px);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),calc(100% - 30px) 100%,0 100%);
 }
-.svc__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair);display:flex;flex-direction:column;justify-content:center}
-.svc__item{border-bottom:1px solid var(--hair)}
-.svc__h{margin:0}
+.svc__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  clip-path:inset(0 100% 0 0);
+}
+.svc__img.was-on{clip-path:inset(0 0 0 0);z-index:1}
+.svc__img.is-on{clip-path:inset(0 0 0 0);z-index:2;transition:clip-path .72s cubic-bezier(.76,0,.24,1)}
+.svc__tag{
+  position:absolute;left:0;bottom:0;z-index:3;
+  background:var(--asphalt);color:#fff;padding:10px 16px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  transition:opacity .25s ease;
+}
+.svc__tag.is-swapping{opacity:0}
+
+/* Titel und Beschreibung: beide mit fester Höhe, damit nichts springt */
+.svc__col{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.svc__list{border-top:1px solid var(--hair)}
+.svc__h{margin:0;border-bottom:1px solid var(--hair)}
 .svc__btn{
   display:block;width:100%;text-align:left;background:none;border:0;cursor:pointer;
-  padding:clamp(17px,2vw,29px) 0 clamp(17px,2vw,29px) 26px;position:relative;color:rgba(29,29,27,.55);
+  padding:clamp(15px,1.7vw,24px) 0 clamp(15px,1.7vw,24px) 24px;position:relative;
+  color:rgba(29,29,27,.55);
   font-family:var(--disp);font-style:italic;font-weight:800;font-stretch:114%;text-transform:uppercase;
-  font-size:clamp(21px,2.6vw,36px);line-height:1;letter-spacing:-.015em;
-  transition:color .25s ease,padding-left .25s ease;
+  font-size:clamp(20px,2.5vw,34px);line-height:1;letter-spacing:-.015em;
+  transition:color .25s ease;
 }
 .svc__btn::before{
-  content:"";position:absolute;left:0;top:50%;width:14px;height:3px;background:var(--orange);
-  transform:translateY(-50%) scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.2,.7,.3,1);
+  content:"";position:absolute;left:0;top:clamp(15px,1.7vw,24px);bottom:clamp(15px,1.7vw,24px);
+  width:3px;background:var(--orange);transform:scaleY(0);transform-origin:top;
+  transition:transform .35s cubic-bezier(.2,.7,.3,1);
 }
 .svc__btn:hover{color:rgba(29,29,27,.8)}
-.svc__item.is-on .svc__h{margin:0}
-.svc__btn{color:var(--ink)}
-.svc__item.is-on .svc__btn::before{transform:translateY(-50%) scaleX(1)}
-.svc__body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.3,1)}
-.svc__item.is-on .svc__body{grid-template-rows:1fr}
-.svc__body > p{overflow:hidden;visibility:hidden;transition:visibility 0s linear .4s;margin:0;padding-left:26px;font-size:16px;color:#46433e;max-width:56ch}
-.svc__item.is-on .svc__body > p{visibility:visible;transition-delay:0s;padding-bottom:clamp(16px,1.8vw,26px)}
+.svc__btn[aria-expanded="true"]{color:var(--ink)}
+.svc__btn[aria-expanded="true"]::before{transform:scaleY(1)}
+
+.svc__desc{position:relative;margin-top:clamp(18px,2vw,26px);padding-left:24px}
+.svc__panel{
+  position:absolute;inset:0 0 auto 24px;margin:0;
+  font-size:16px;color:#46433e;max-width:56ch;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.3,1),visibility 0s linear .3s;
+}
+.svc__panel.is-on{opacity:1;visibility:visible;transform:none;transition-delay:.12s,.12s,0s}
 
 /* Aufbau */
 .aufbau{background:var(--asphalt);color:#fff;padding-block:clamp(54px,6.4vw,100px)}
 .layers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
-.layers__viz{position:sticky;top:96px}
+.layers__viz{position:sticky;top:76px;height:calc(100svh - 76px);display:flex;align-items:center}
 .viz svg{width:100%;height:auto;display:block}
 .lyr{
   opacity:.14;transform:scaleY(.04);transform-box:fill-box;transform-origin:50% 100%;
@@ -216,8 +236,8 @@ a,button,input,textarea,select,summary,[tabindex]{scroll-margin-top:96px;scroll-
 .step h3{color:rgba(255,255,255,.55);transition:color .35s ease;font-family:var(--disp);font-style:italic;font-weight:800;font-stretch:112%;text-transform:uppercase;font-size:clamp(19px,2.1vw,28px);line-height:1.02;margin:0 0 10px;letter-spacing:-.01em}
 .step p:last-child{margin:0;color:var(--muted-l);font-size:16px;max-width:46ch}
 .note{
-  margin:clamp(32px,4vw,56px) 0 0;padding:18px 22px;border-left:3px solid var(--spray);
-  background:rgba(255,255,255,.04);color:var(--muted-l);font-size:15px;max-width:82ch;
+  margin:clamp(32px,4vw,56px) 0 0;padding:16px 22px;border-left:3px solid var(--spray);
+  background:rgba(255,255,255,.04);color:rgba(255,255,255,.78);font-size:15px;
 }
 
 /* Projekte */
@@ -260,7 +280,7 @@ a,button,input,textarea,select,summary,[tabindex]{scroll-margin-top:96px;scroll-
 .rail__track{list-style:none;display:flex;gap:clamp(12px,1.4vw,18px);margin:0;padding:0}
 .rail__track li{flex:0 0 clamp(250px,24vw,320px);scroll-snap-align:start;background:var(--asphalt-2);border-top:4px solid var(--orange);padding:20px 22px 24px}
 .yr{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--orange);margin:0 0 12px}
-.rail__track li p:last-child{margin:0;font-size:14.5px;color:var(--muted-l)}
+.rail__track li p:last-child{margin:0;font-size:14.5px;color:rgba(255,255,255,.92)}
 .rail__nav{display:flex;gap:7px;margin-top:18px}
 .rbtn{width:42px;height:42px;background:transparent;border:1px solid rgba(255,255,255,.38);color:#fff;font-size:16px;cursor:pointer;transition:all .18s ease}
 .rbtn:hover{background:#fff;color:var(--asphalt);border-color:#fff}
@@ -270,7 +290,7 @@ a,button,input,textarea,select,summary,[tabindex]{scroll-margin-top:96px;scroll-
 .azubi__in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(26px,4vw,64px);align-items:start}
 .azubi .eyebrow{color:var(--ink)}
 .azubi .h2{font-size:clamp(26px,3.2vw,42px)}
-.azubi .h2 em{color:#fff;background:var(--asphalt);padding:.02em .16em .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.azubi .h2 em{color:var(--ink);text-decoration:underline;text-decoration-color:#fff;text-decoration-thickness:.085em;text-underline-offset:.12em;text-decoration-skip-ink:none}
 .azubi__list{list-style:none;margin:24px 0;padding:0}
 .azubi__list li{padding:14px 0;border-top:1px solid rgba(29,29,27,.22);font-size:15px;color:#332f2a}
 .azubi__list li:last-child{border-bottom:1px solid rgba(29,29,27,.22)}
@@ -350,13 +370,13 @@ a,button,input,textarea,select,summary,[tabindex]{scroll-margin-top:96px;scroll-
   .burger{display:block;order:3;margin-left:6px}
   .head__cta{order:2;margin-left:auto}
   .head__cta .btn{display:none}
-  .layers__viz{position:static}
+  .layers__viz{position:static;height:auto;display:block}
 }
 @media (max-width:900px){
   body{font-size:16px}
   .layers{grid-template-columns:1fr}
-  .svc{grid-template-columns:1fr}
-  .svc__stage{aspect-ratio:16/10}
+  .svc{grid-template-columns:1fr;gap:22px}
+  .svc__stage{min-height:0;aspect-ratio:16/10}
   .fleet{grid-template-columns:1fr}
   .azubi__in{grid-template-columns:1fr}
   .azubi__img{order:-1}

@@ -99,24 +99,20 @@
         <span class="svc__tag" id="svcTag">Öffentlich und gewerblich</span>
       </div>
 
-      <ul class="svc__list">
-        <li class="svc__item is-on">
-          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="0" data-tag="Öffentlich und gewerblich" aria-expanded="true" aria-controls="svc0">Straßen- und Asphaltbau<span class="sr">, Bereich: Öffentlich und gewerblich</span></button></h3>
-          <div class="svc__body" id="svc0"><p>Ortsdurchfahrten, Wirtschaftswege, Hof- und Betriebsflächen. Wir fräsen die alte Decke ab und bauen die neue mit unserem Vögele-Fertiger ein, auf Wunsch abschnittsweise im laufenden Verkehr.</p></div>
-        </li>
-        <li class="svc__item">
-          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="1" data-tag="Das Handwerk seit 1948" aria-expanded="false" aria-controls="svc1">Pflasterbau<span class="sr">, Bereich: Das Handwerk seit 1948</span></button></h3>
-          <div class="svc__body" id="svc1"><p>Beton- und Natursteinpflaster, Großformate, Bordsteine, taktile Leitsysteme. Ab etwa 400 Quadratmetern verlegt unsere Pflastermaschine die Reihen. Das verkürzt die Bauzeit und hält das Fugenbild gleichmäßig.</p></div>
-        </li>
-        <li class="svc__item">
-          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="2" data-tag="Unter der Straße" aria-expanded="false" aria-controls="svc2">Kanal- und Wasserleitungsbau<span class="sr">, Bereich: Unter der Straße</span></button></h3>
-          <div class="svc__body" id="svc2"><p>Schmutz- und Regenwasserkanäle, Trinkwasserleitungen, Hausanschlüsse, Schächte bis DN 2000, mit Verbau und Wasserhaltung. Die Unterlagen für den Auftraggeber gehören dazu.</p></div>
-        </li>
-        <li class="svc__item">
-          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="3" data-tag="Für Privatkunden" aria-expanded="false" aria-controls="svc3">Außenanlagen<span class="sr">, Bereich: Für Privatkunden</span></button></h3>
-          <div class="svc__body" id="svc3"><p>Terrassen, Einfahrten, Hofbefestigungen, Treppen, Natursteinmauern, Zisternen. Wir sehen uns die Situation bei Ihnen an und bringen Muster mit, bevor irgendetwas bestellt wird.</p></div>
-        </li>
-      </ul>
+      <div class="svc__col">
+        <div class="svc__list">
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="0" data-tag="Öffentlich und gewerblich" id="svctab0" aria-controls="svcpanel0" aria-expanded="true">Straßen- und Asphaltbau<span class="sr">, Bereich: Öffentlich und gewerblich</span></button></h3>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="1" data-tag="Das Handwerk seit 1948" id="svctab1" aria-controls="svcpanel1" aria-expanded="false">Pflasterbau<span class="sr">, Bereich: Das Handwerk seit 1948</span></button></h3>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="2" data-tag="Unter der Straße" id="svctab2" aria-controls="svcpanel2" aria-expanded="false">Kanal- und Wasserleitungsbau<span class="sr">, Bereich: Unter der Straße</span></button></h3>
+          <h3 class="svc__h"><button type="button" class="svc__btn" data-i="3" data-tag="Für Privatkunden" id="svctab3" aria-controls="svcpanel3" aria-expanded="false">Außenanlagen<span class="sr">, Bereich: Für Privatkunden</span></button></h3>
+        </div>
+        <div class="svc__desc" id="svcDesc">
+          <p class="svc__panel is-on" data-i="0" id="svcpanel0" aria-labelledby="svctab0">Ortsdurchfahrten, Wirtschaftswege, Hof- und Betriebsflächen. Wir fräsen die alte Decke ab und bauen die neue mit unserem Vögele-Fertiger ein, auf Wunsch abschnittsweise im laufenden Verkehr.</p>
+          <p class="svc__panel" data-i="1" id="svcpanel1" aria-labelledby="svctab1">Beton- und Natursteinpflaster, Großformate, Bordsteine, taktile Leitsysteme. Ab etwa 400 Quadratmetern verlegt unsere Pflastermaschine die Reihen. Das verkürzt die Bauzeit und hält das Fugenbild gleichmäßig.</p>
+          <p class="svc__panel" data-i="2" id="svcpanel2" aria-labelledby="svctab2">Schmutz- und Regenwasserkanäle, Trinkwasserleitungen, Hausanschlüsse, Schächte bis DN 2000, mit Verbau und Wasserhaltung. Die Unterlagen für den Auftraggeber gehören dazu.</p>
+          <p class="svc__panel" data-i="3" id="svcpanel3" aria-labelledby="svctab3">Terrassen, Einfahrten, Hofbefestigungen, Treppen, Natursteinmauern, Zisternen. Wir sehen uns die Situation bei Ihnen an und bringen Muster mit, bevor irgendetwas bestellt wird.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -195,7 +191,7 @@
   </div>
 
   <div class="wrap">
-    <p class="note">Das gilt für befahrene Flächen nach RStO. Terrassen und Gartenwege bauen wir schlanker, Stapler- und LKW-Flächen stärker. Was bei Ihnen nötig ist, sehen wir beim Ortstermin.</p>
+    <p class="note">Regelbauweise nach RStO. Terrassen bauen wir schlanker, Stapler- und LKW-Flächen stärker.</p>
   </div>
 </section>
 
@@ -203,7 +199,7 @@
 <section class="section" id="projekte">
   <div class="wrap">
     <header class="shead shead--row">
-      <h2 class="h2">Gebaut im Rheingau-Taunus</h2>
+      <h2 class="h2">Aus unseren Baustellen</h2>
       <div class="filters" role="group" aria-label="Projekte filtern">
         <button class="chip is-on" type="button" data-f="alle">Alle</button>
         <button class="chip" type="button" data-f="strasse">Straßenbau</button>
