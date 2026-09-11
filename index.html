@@ -333,7 +333,8 @@
       </div>
       <label>E-Mail<input type="email" name="email" required autocomplete="email"></label>
       <label>Ort der Baustelle<input type="text" name="ort"></label>
-      <label>Worum geht es?<textarea name="nachricht" rows="5" placeholder="Zum Beispiel: Einfahrt neu pflastern, ungefähr 90 Quadratmeter, jetzt liegt Asphalt drauf."></textarea></label>
+      <label>Worum geht es?<textarea name="nachricht" rows="5" aria-describedby="msgHint"></textarea></label>
+      <p class="fhint" id="msgHint">Zum Beispiel: Einfahrt neu pflastern, ungefähr 90 Quadratmeter, jetzt liegt Asphalt drauf.</p>
       <label class="chk"><input type="checkbox" name="datenschutz" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden.</span></label>
       <button class="btn btn--full" type="submit">Anfrage abschicken</button>
       <p class="kform__note">Lieber direkt? <a href="tel:+4961264898">06126 4898</a></p>
